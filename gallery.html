@@ -1,5 +1,6 @@
 --- 
 layout: default 
+popup-gallery: true
 gallery: 
 - column-size: col-4_sm-12
   aspect-ratio: square
@@ -37,8 +38,32 @@ gallery:
          </div> 
      </header>
 
-    <!--------------- Gallery Section ------------------->
-    <section class="padded"> 
+
+  <!--------------- Pop Up Gallery Section ------------------->
+  {% if page.popup-gallery == true %}
+
+  <section class="padded"> 
+
+    <h2> Popup Gallery </h2>
+    <div class="gallery grid" id="lightgallery">
+      {% for item in page.gallery %}
+    
+        <a class="{{item.column-size}} gallery-item" href="{{item.background_image}}">
+          <div class="bg-image {{item.aspect-ratio}}" 
+              style="background-image: url('{{item.background_image}}');">
+          </div>
+        </a> 
+    
+      {% endfor %}
+    </div>
+  </section>
+
+  {% else %}
+
+    <!--------------- Standard Gallery Section ------------------->
+  
+    <section class="padded">
+      <h2> Standard Gallery </h2> 
         <div class="gallery grid">
             {% for item in page.gallery %}
         
@@ -51,6 +76,8 @@ gallery:
             {% endfor %}
         </div>
     </section>
+   
+    {% endif %}
 
      <!--------------- Gallery Section 
     <section class=" padded"> 
@@ -74,4 +101,16 @@ gallery:
           <div class="bg-image landscape bg-img-5"></div>
         </div> 
       </div>------------------->
-    
+
+    <!---------------Button with Gallery Slide Option 
+      <div class="gallery grid" id="lightgallery-2">
+        <a class="button" href="/images/the-sleep-co-original1.jpg" title="Funny dog 1">
+            View Our Work 
+        </a> 
+        <a href="/images/the-sleep-co-original2.jpg" title=" 1"></a> 
+        <a href="/images/the-sleep-co-original3.jpg" title=" 2"></a> 
+        <a href="/images/the-sleep-co-original4.jpg" title=" 3"></a> 
+        <a href="/images/the-sleep-co-original1.jpg" title=" 4"></a> 
+        <a href="/images/the-sleep-co-original2.jpg" title=" 5"></a> 
+        <a href="/images/the-sleep-co-original3.jpg" title=" 6"></a> 
+    </div>------------------->

@@ -227,9 +227,22 @@ footer a {
 /* Image Gallery --------------------  */
 
 .gallery [class*="col-"] {
-    padding: 0.5%;
+    padding: 0.9%;
   }
 
+.gallery .gallery-item { 
+    border-bottom: none;
+}
+
+/* Background of Gallery when active --------------------  */
+
+.lg-backdrop {
+    background-color: (20,20,20); 
+}
+
+.lg-backdrop.in { 
+    opacity:0.5;
+}
 
 /* Buttons & Forms --------------------  */
 
