@@ -43,7 +43,6 @@ gallery:
   {% if page.popup-gallery == true %}
 
   <section class="padded"> 
-
     <h2> Popup Gallery </h2>
     <div class="gallery grid" id="lightgallery">
       {% for item in page.gallery %}
@@ -78,6 +77,12 @@ gallery:
     </section>
    
     {% endif %}
+
+   <!-----------------  Testimonial section   ----------------->
+   {% include testimonial.html %}
+  
+
+
 
      <!--------------- Gallery Section 
     <section class=" padded"> 
